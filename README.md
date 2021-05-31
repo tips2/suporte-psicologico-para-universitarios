@@ -7,8 +7,8 @@ Projeto de inteligência artificial basedo em uma árvore de deciões escrito em
 Escolhemos a linguagem de programação python por acreditarmos ser uma linguagem mais especilizada para esse tipo de aplicação, por possuir mais frameworks e bibliotecas especializadas para essas aplicações específicas.
 
 O principal objetivo do projeto é realizar um diagnóstico de algum transtorno mental, o trabalho de sistema especialista tem o propósito de realizar um diagnóstico bem aproximado dos seguintes transtornos mentais:
-* Depressão
-- Niveis(fraco, moderado, alto)
+* Depressão:
+- Niveis (fraco, moderado, alto)
 * Ansieade
 -  TAG (Transtorno de ansiedade generalizada)
 * TDAH (Transtorno de déficit de atenção)
