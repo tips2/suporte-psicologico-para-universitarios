@@ -31,9 +31,16 @@ Para verificar algum alvo arbitrário, basta chamar a função
 predict da árvore e colocar os valores arbitrários como parâmetros.
 '''
 
-def start() -> float:
-    print('This is the start function')
+def read_file(file_path: str):
+    values = []
+    with open(file_path) as fp:
+        for 
+        line = fp.readline()
+        if line[0] == '#':
+            line = line[1:].strip()
+        values.append(line)
+    return values
 
 if __name__ == '__main__':
-    print('hello world')
-    start()
+    values = read_file('question-db.dat')
+    print(values)
