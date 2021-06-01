@@ -54,6 +54,8 @@ class Disturbance:
         for range in self.ranges:
             print(range)
 
+    # This method prompts the user all the questions of the disturbance,
+    # also requires an answer from the user
     def question(self):
         param_question = '<'
         number_values = ''
@@ -84,7 +86,19 @@ class Disturbance:
             index = index.index(answer)
             self.score += self.values[index][1]
     
+    # This method fits the score gotten into the ranges from the db
+    def fit_param(self):
+        for [first, second], word in self.ranges:
+            if self.score >= first and self.score <= second:
+                self.disturb_status = word
+                break
 
+    def routine(self):
+        self.question()
+        self.fit_param()
+    
+    def print_status(self):
+        print(self.disturb_status)
 
 def parse_file(file_path: str) -> Disturbance:
     dists = []
@@ -117,7 +131,7 @@ def parse_file(file_path: str) -> Disturbance:
                 rng_vals = (range_tokens[0].split(', '))
                 rng_vals = [int(s) for s in rng_vals]
                 range_tokens = [rng_vals, range_tokens[1]]
-                ranges = range_tokens
+                ranges.append(range_tokens)
             else:
                 questions.append(line)
 
@@ -126,5 +140,8 @@ def parse_file(file_path: str) -> Disturbance:
 if __name__ == '__main__':
     folder = parse_file('question-db.dat')
     for attr in folder:
-        attr.question()
-        print(attr.score)
+        attr.routine()
+    
+    for attr in folder:
+        print(f'Se retratando de {attr.name}: ', end='')
+        attr.print_status()
