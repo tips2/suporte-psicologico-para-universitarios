@@ -9,7 +9,7 @@ Sinto prazer quando assisto um programa na televisão ou leio um livro
 [1, 4] Fraco
 [5, 8] Moderado
 [9, 12] Forte
-
+*
 # Ansiedade
 Minhas preocupações me oprimem.
 Sei que não deveria me preocupar com as coisas, mas simplesmente não consigo evitar.
@@ -20,3 +20,4 @@ Estou o tempo todo preocupado (a)
 < Não(0), Talvez(1), Sim(2) >
 [1, 6] Moderada
 [7, 12] Transtorno de Ansiedade Generalizada
+*
