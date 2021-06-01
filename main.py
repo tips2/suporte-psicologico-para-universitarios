@@ -88,7 +88,7 @@ def parse_file(file_path: str) -> Disturbance:
                 name = line.strip(' #')
             elif line[0] == '<':
                 line.index('(')
-                value_tokens = line.strip('<> ').split(', ')
+                value_tokens = [s.strip(' ') for s in line.strip('<> ').split(',')]
                 value_tokens = [s.strip(')').split('(') for s in value_tokens]
                 value_tokens = [[s[0], int(s[1])] for s in value_tokens]
                 # value_tokens = list(chain(*value_tokens))
