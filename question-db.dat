@@ -5,8 +5,10 @@ Existem momentos durante o dia em que me sinto alegre
 Gosto de cuidar da minha aparência
 Me sinto animado com coisas boas que estão por vir
 Sinto prazer quando assisto um programa na televisão ou leio um livro
-não = 2, talvez =1, sim = 0.
-fraco(1-4), moderado(5-8), forte(9-12)
+< não = 2, talvez = 1, sim = 0 >
+[1, 4] Fraco
+[5, 8] Moderado
+[9, 12] Forte
 
 # Ansiedade
 Minhas preocupações me oprimem.
@@ -15,5 +17,6 @@ Estou sempre preocupado com alguma coisa.
 Sempre fui uma pessoa Ansiosa.
 Percebo que venho tendo muitas preocupações. 
 Estou o tempo todo preocupado (a)
-não = 0, talvez =1, sim = 2
-(1-6)/TAG(7-12)
+< não = 0, talvez = 1, sim = 2 >
+[1, 6] Moderada
+[7, 12] Transtorno de Ansiedade Generalizada
