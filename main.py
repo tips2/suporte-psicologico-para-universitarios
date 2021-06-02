@@ -5,11 +5,12 @@ def comp_str(string: str):
 
 class Disturbance:
     
-    def __init__(self, name, questions, values, ranges):
+    def __init__(self, name, questions, values, ranges, recomend):
         self.name = name
         self.questions = questions[:]
         self.values = values[:]
         self.ranges = ranges[:]
+        self.recomend = recomend[:]
         self.score = 0
 
     def print(self):
@@ -55,9 +56,12 @@ class Disturbance:
     
     # This method fits the score gotten into the ranges from the db
     def fit_param(self):
-        for [first, second], word in self.ranges:
+        for i, [[first, second], word] in enumerate(self.ranges):
             if self.score >= first and self.score <= second:
                 self.disturb_status = word
+                self.status_index = i
+                # for index in range(len(self.recomend) -1, i, -1):
+                #     del self.recomend[index]
                 break
 
     def routine(self):
@@ -68,16 +72,21 @@ class Disturbance:
         print(f'{self.name}:\n\t{self.disturb_status}')
 
     def print_recomendation(self):
-        print('Recomendation...')
+        for i in self.recomend[self.status_index:-1]:
+            if i != '':
+                print(i)
 
 class FileParser:
     def finalization(self, line: str) -> None:
-        dist = Disturbance(self.name, self.questions, self.values, self.ranges)
+        dist = Disturbance(
+            self.name, self.questions, self.values, self.ranges, self.recomend
+        )
         self.dists.append(dist)
         self.name = ''
         self.questions.clear()
         self.values.clear()
         self.ranges.clear()
+        self.recomend.clear()
 
     def naming(self, line: str) -> None:
         self.name = line.strip(' #')
@@ -100,7 +109,7 @@ class FileParser:
         self.questions.append(line.strip('? '))
 
     def recomendation(self, line: str) -> None:
-        print('Started recomendation')
+        self.recomend.append(line.strip('! '))
 
     def parse_file(self, file_path: str) -> Disturbance:
         self.dists = []
@@ -109,6 +118,7 @@ class FileParser:
             self.questions = []
             self.values = []
             self.ranges = []
+            self.recomend = []
 
             switchers = {
                 '*': self.finalization,

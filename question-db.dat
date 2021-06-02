@@ -9,9 +9,9 @@
 [0, 1] Não contém depressão
 !
 [1, 4] Fraco
-!
+! Uma recomendação padrão
 [5, 8] Moderado
-!
+! As recomendações são aplicadas para todas as coisas que forem abaixo da adquirida
 [9, 12] Forte
 !
 *
