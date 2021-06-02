@@ -65,50 +65,78 @@ class Disturbance:
         self.fit_param()
     
     def print_status(self):
-        print(self.disturb_status)
+        print(f'{self.name}:\n\t{self.disturb_status}')
 
-def parse_file(file_path: str) -> Disturbance:
-    dists = []
-    with open(file_path, encoding='utf-8') as fp:
-        name = ''
-        questions = []
-        values = []
-        ranges = []
+    def print_recomendation(self):
+        print('Recomendation...')
 
-        for line in fp:
-            line = line.strip()
-            if line == '*':
-                dist = Disturbance(name, questions, values, ranges)
-                dists.append(dist)
-                name = ''
-                questions.clear()
-                values.clear()
-                ranges.clear()
-            elif line[0] == '#':
-                name = line.strip(' #')
-            elif line[0] == '<':
-                line.index('(')
-                value_tokens = [s.strip(' ') for s in line.strip('<> ').split(',')]
-                value_tokens = [s.strip(')').split('(') for s in value_tokens]
-                value_tokens = [[s[0], int(s[1])] for s in value_tokens]
-                # value_tokens = list(chain(*value_tokens))
-                values = value_tokens
-            elif line[0] == '[':
-                range_tokens = line.strip('[ ').split('] ')
-                rng_vals = [s.strip(' ') for s in range_tokens[0].split(',')]
-                rng_vals = [int(s) for s in rng_vals]
-                range_tokens = [rng_vals, range_tokens[1]]
-                ranges.append(range_tokens)
-            else:
-                questions.append(line)
+class FileParser:
+    def finalization(self, line: str) -> None:
+        dist = Disturbance(self.name, self.questions, self.values, self.ranges)
+        self.dists.append(dist)
+        self.name = ''
+        self.questions.clear()
+        self.values.clear()
+        self.ranges.clear()
 
-    return dists
+    def naming(self, line: str) -> None:
+        self.name = line.strip(' #')
+
+    def tokening(self, line: str) -> None:
+        line.index('(')
+        value_tokens = [s.strip(' ') for s in line.strip('<> ').split(',')]
+        value_tokens = [s.strip(')').split('(') for s in value_tokens]
+        value_tokens = [[s[0], int(s[1])] for s in value_tokens]
+        self.values = value_tokens
+
+    def rangening(self, line: str) -> None:
+        range_tokens = line.strip('[ ').split('] ')
+        rng_vals = [s.strip(' ') for s in range_tokens[0].split(',')]
+        rng_vals = [int(s) for s in rng_vals]
+        range_tokens = [rng_vals, range_tokens[1]]
+        self.ranges.append(range_tokens)
+
+    def questioning(self, line: str) -> None:
+        self.questions.append(line.strip('? '))
+
+    def recomendation(self, line: str) -> None:
+        print('Started recomendation')
+
+    def parse_file(self, file_path: str) -> Disturbance:
+        self.dists = []
+        with open(file_path, encoding='utf-8') as fp:
+            self.name = ''
+            self.questions = []
+            self.values = []
+            self.ranges = []
+
+            switchers = {
+                '*': self.finalization,
+                '#': self.naming,
+                '<': self.tokening,
+                '[': self.rangening,
+                '?': self.questioning,
+                '!': self.recomendation
+            }
+
+            for line in fp:
+                line = line.strip()
+                switchers[line[0]](line)
+
+        return self.dists
 
 if __name__ == '__main__':
-    folder = parse_file('question-db.dat')
+    folder = FileParser().parse_file('question-db.dat')
+
     for attr in folder:
         attr.routine()
     
+    print('O seu diagnóstico é:')
+    
     for attr in folder:
-        print(f'Se retratando de {attr.name}: ', end='')
         attr.print_status()
+    
+    print('Recomenda-se que:')
+
+    for attr in folder:
+        attr.print_recomendation()
