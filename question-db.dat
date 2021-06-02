@@ -1,25 +1,32 @@
-# Depressão
-Sinto que gosto de fazer as mesmas coisas de antes
-Dou risadas espontaneamente e me divirto com coisas engraçadas
-Existem momentos durante o dia em que me sinto alegre
-Gosto de cuidar da minha aparência
-Me sinto animado com coisas boas que estão por vir
-Sinto prazer quando assisto um programa na televisão ou leio um livro
+# Transtorno Depressivo
+? Sinto que gosto de fazer as mesmas coisas de antes
+? Dou risadas espontaneamente e me divirto com coisas engraçadas
+? Existem momentos durante o dia em que me sinto alegre
+? Gosto de cuidar da minha aparência
+? Me sinto animado com coisas boas que estão por vir
+? Sinto prazer quando assisto um programa na televisão ou leio um livro
 < Não(2), Talvez(1), Sim(0) >
 [0, 1] Não contém depressão
+!
 [1, 4] Fraco
+!
 [5, 8] Moderado
+!
 [9, 12] Forte
+!
 *
-# Ansiedade
-Minhas preocupações me oprimem.
-Sei que não deveria me preocupar com as coisas, mas simplesmente não consigo evitar.
-Estou sempre preocupado com alguma coisa. 
-Sempre fui uma pessoa Ansiosa.
-Percebo que venho tendo muitas preocupações. 
-Estou o tempo todo preocupado (a)
+# Transtorno Ansioso
+? Minhas preocupações me oprimem.
+? Sei que não deveria me preocupar com as coisas, mas simplesmente não consigo evitar.
+? Estou sempre preocupado com alguma coisa. 
+? Sempre fui uma pessoa Ansiosa.
+? Percebo que venho tendo muitas preocupações. 
+? Estou o tempo todo preocupado (a)
 < Não(0), Talvez(1), Sim(2) >
 [0, 1] Não contém ansiedade
+!
 [1, 6] Moderada
+!
 [7, 12] Transtorno de Ansiedade Generalizada
+!
 *
