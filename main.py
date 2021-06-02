@@ -3,9 +3,6 @@ import sys
 
 from FileProcessor import FileParser
 
-def comp_str(string: str):
-    return unidecode(string.lower())
-
 if __name__ == '__main__':
     debug = False
     if len(sys.argv) >= 2:
