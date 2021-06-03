@@ -66,9 +66,10 @@ class Disturbance:
         self.fit_param()
     
     def print_status(self):
-        print(f'{self.name}: {self.disturb_status}')
+        print(f'{self.name} {self.disturb_status}')
 
     def print_recomendation(self):
-        for i in self.recomend[0:self.status_index]:
-            if i != '':
-                print(i)
+        print(self.recomend[self.status_index])
+        # for i in self.recomend[0:self.status_index]:
+        #     if i != '':
+        #         print(i)

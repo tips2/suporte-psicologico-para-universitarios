@@ -6,14 +6,14 @@
 ? Me sinto animado com coisas boas que estão por vir
 ? Sinto prazer quando assisto um programa na televisão ou leio um livro
 < Não(2), Talvez(1), Sim(0) >
-[0, 1] Não contém depressão
+[0, 1] Não Contido
 ! Uma outra recomendação
 [1, 4] Fraco
 ! Uma recomendação padrão
 [5, 8] Moderado
-! As recomendações são aplicadas para todas as coisas que forem abaixo da adquirida
-! This is another recomendation line
+!
 [9, 12] Forte
+
 # Transtorno Ansioso
 ? Minhas preocupações me oprimem.
 ? Sei que não deveria me preocupar com as coisas, mas simplesmente não consigo evitar.
@@ -22,7 +22,7 @@
 ? Percebo que venho tendo muitas preocupações. 
 ? Estou o tempo todo preocupado (a)
 < Não(0), Talvez(1), Sim(2) >
-[0, 1] Não contém ansiedade
+[0, 1] Não contido
 ! Qualquer recomendação
 [1, 6] Moderado
-[7, 12] Transtorno de Ansiedade Generalizada
+[7, 12] Generalizado (TAG)
