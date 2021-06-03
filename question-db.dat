@@ -7,12 +7,21 @@
 ? Sinto prazer quando assisto um programa na televisão ou leio um livro
 < Não(2), Talvez(1), Sim(0) >
 [0, 1] Não Contido
-! Uma outra recomendação
+! É importante sempre ter um apoio emocional por isso para você recomendamos o CVV
+! O CVV – Centro de Valorização da Vida tem como objetivo realizar apoio emocional e prevenção do suicídio, atendendo voluntária e gratuitamente todas as pessoas que querem e precisam conversar, sob total sigilo por telefone, email e chat 24 horas todos os dias.
+! acesse: https://www.cvv.org.br/
 [1, 4] Fraco
-! Uma recomendação padrão
+! Para depressão:
+! O CVV – Centro de Valorização da Vida tem como objetivo realizar apoio emocional e prevenção do suicídio, atendendo voluntária e gratuitamente todas as pessoas que querem e precisam conversar, sob total sigilo por telefone, email e chat 24 horas todos os dias.
+! acesse: https://www.cvv.org.br/
 [5, 8] Moderado
-!
+! Para depressão:
+! O CVV – Centro de Valorização da Vida tem como objetivo realizar apoio emocional e prevenção do suicídio, atendendo voluntária e gratuitamente todas as pessoas que querem e precisam conversar, sob total sigilo por telefone, email e chat 24 horas todos os dias.
+! acesse: https://www.cvv.org.br/
 [9, 12] Forte
+! Para depressão:
+! O CVV – Centro de Valorização da Vida tem como objetivo realizar apoio emocional e prevenção do suicídio, atendendo voluntária e gratuitamente todas as pessoas que querem e precisam conversar, sob total sigilo por telefone, email e chat 24 horas todos os dias.
+! acesse: https://www.cvv.org.br/
 
 # Transtorno Ansioso
 ? Minhas preocupações me oprimem.
@@ -23,6 +32,12 @@
 ? Estou o tempo todo preocupado (a)
 < Não(0), Talvez(1), Sim(2) >
 [0, 1] Não contido
-! Qualquer recomendação
+! Ficamos muito felizes por você se encontrar com a saúde mental em dia, mas não deixe de sempre exercer em mantê-la, principalmente nos últimos tempos de pandemia.
 [1, 6] Moderado
+! Para ansiedade: 
+! App Lojong: o App tem o objetivo exercícios para ajudar a controlar a ansiedade, aliviar o estresse, melhorar o foco, o sono e viver com mais felicidade.
+! acesse: https://play.google.com/store/apps/details?id=br.com.lojong&hl=pt_BR&gl=US
 [7, 12] Generalizado (TAG)
+! Para ansiedade:
+! App Lojong: o App tem o objetivo exercícios para ajudar a controlar a ansiedade, aliviar o estresse, melhorar o foco, o sono e viva com mais felicidade
+! acesse: https://play.google.com/store/apps/details?id=br.com.lojong&hl=pt_BR&gl=US

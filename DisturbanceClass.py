@@ -69,7 +69,7 @@ class Disturbance:
         print(f'{self.name} {self.disturb_status}')
 
     def print_recomendation(self):
-        print(self.recomend[self.status_index])
+        print('\n' + self.recomend[self.status_index])
         # for i in self.recomend[0:self.status_index]:
         #     if i != '':
         #         print(i)
