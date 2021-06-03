@@ -7,10 +7,12 @@
 ? Sinto prazer quando assisto um programa na televisão ou leio um livro
 < Não(2), Talvez(1), Sim(0) >
 [0, 1] Não contém depressão
+! Uma outra recomendação
 [1, 4] Fraco
 ! Uma recomendação padrão
 [5, 8] Moderado
 ! As recomendações são aplicadas para todas as coisas que forem abaixo da adquirida
+! This is another recomendation line
 [9, 12] Forte
 *
 # Transtorno Ansioso
