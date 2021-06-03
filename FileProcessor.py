@@ -12,13 +12,15 @@ class line_type(Enum):
 
 class FileParser:
     def __init__(self, debug = False):
+        self.instance = False
         self.debug = debug
         self.in_range = False
         self.rec_lines = ''
 
     def finalization(self, line: str) -> None:
         if not self.instance:
-            raise Exception("Need to have an instantiated object before finalizing it")
+            return 
+        self.instance = False
         for _ in range(len(self.recomend), len(self.ranges)):
             self.recomend.append('')
         
@@ -55,7 +57,6 @@ class FileParser:
         if not self.in_range:
             raise Exception("Need to have a range line before description")
         for _ in range(len(self.recomend), len(self.ranges) - 1):
-            print('this simple line')
             self.recomend.append('')
         self.rec_lines += line.strip('! ') + '\n'
 
@@ -83,24 +84,22 @@ class FileParser:
 
             for line in fp:
                 line = line.strip()
-                if line == '' and self.instance:
-                    func = switchers['*']
-                    self.instance = False
+                if line == '':
+                    func = self.finalization
                 else:
                     func = switchers[line[0]]
-                if self.instance == False and func not in [self.naming, self.finalization]:
-                    raise Exception("Need to initialize with name before putting attributes")
-                func(line)
-        
-                func = switchers[line[0]]
+
                 if self.in_range and func != self.recomendation:
                     self.recomend.append(self.rec_lines.strip())
                     self.rec_lines = ''
                     self.in_range = False
                 
+                if self.instance and func == self.naming:
+                    self.finalization('')
+
                 func(line)
 
                 if not self.in_range and func != self.recomendation:
                     self.in_range = False
-            
+            self.finalization('')
         return self.dists
