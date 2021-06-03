@@ -16,6 +16,8 @@ class FileParser:
         self.previous = line_type.none
 
     def finalization(self, line: str) -> None:
+        if not self.instance:
+            raise Exception("Need to have an instantiated object before finalizing it")
         for _ in range(len(self.recomend), len(self.ranges)):
             self.recomend.append('')
         
@@ -28,9 +30,11 @@ class FileParser:
         self.values.clear()
         self.ranges.clear()
         self.recomend.clear()
+        self.instance = False
         self.previous = line_type.end
 
     def naming(self, line: str) -> None:
+        self.instance = True
         self.name = line.strip(' #')
         self.previous = line_type.name
 
@@ -64,6 +68,7 @@ class FileParser:
 
     def parse_file(self, file_path: str) -> Disturbance:
         self.dists = []
+        self.instance = False
         with open(file_path, encoding='utf-8') as fp:
             self.name = ''
             self.questions = []
@@ -72,16 +77,23 @@ class FileParser:
             self.recomend = []
 
             switchers = {
-                '*': self.finalization,
                 '#': self.naming,
                 '<': self.tokening,
                 '[': self.rangening,
                 '?': self.questioning,
-                '!': self.recomendation
+                '!': self.recomendation,
+                '*': self.finalization,
             }
 
             for line in fp:
                 line = line.strip()
-                switchers[line[0]](line)
-            
+                if line == '' and self.instance:
+                    func = switchers['*']
+                    self.instance = False
+                else:
+                    func = switchers[line[0]]
+                if self.instance == False and func not in [self.naming, self.finalization]:
+                    raise Exception("Need to initialize with name before putting attributes")
+                func(line)
+        
         return self.dists
