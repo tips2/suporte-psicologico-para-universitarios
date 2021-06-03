@@ -13,7 +13,8 @@ class line_type(Enum):
 class FileParser:
     def __init__(self, debug = False):
         self.debug = debug
-        self.previous = line_type.none
+        self.in_range = False
+        self.rec_lines = ''
 
     def finalization(self, line: str) -> None:
         if not self.instance:
@@ -30,13 +31,10 @@ class FileParser:
         self.values.clear()
         self.ranges.clear()
         self.recomend.clear()
-        self.instance = False
-        self.previous = line_type.end
 
     def naming(self, line: str) -> None:
         self.instance = True
         self.name = line.strip(' #')
-        self.previous = line_type.name
 
     def tokening(self, line: str) -> None:
         line.index('(')
@@ -44,27 +42,25 @@ class FileParser:
         value_tokens = [s.strip(')').split('(') for s in value_tokens]
         value_tokens = [[s[0], int(s[1])] for s in value_tokens]
         self.values = value_tokens
-        self.previous = line_type.token
 
     def rangening(self, line: str) -> None:
+        self.in_range = True
         range_tokens = line.strip('[ ').split('] ')
         rng_vals = [s.strip(' ') for s in range_tokens[0].split(',')]
         rng_vals = [int(s) for s in rng_vals]
         range_tokens = [rng_vals, range_tokens[1]]
         self.ranges.append(range_tokens)
-        self.previous = line_type.range
 
     def recomendation(self, line: str) -> None:
-        if self.previous != line_type.range:
+        if not self.in_range:
             raise Exception("Need to have a range line before description")
         for _ in range(len(self.recomend), len(self.ranges) - 1):
+            print('this simple line')
             self.recomend.append('')
-        self.recomend.append(line.strip('! '))
-        self.previous = line_type.description
+        self.rec_lines += line.strip('! ') + '\n'
 
     def questioning(self, line: str) -> None:
         self.questions.append(line.strip('? '))
-        self.previous = line_type.question
 
     def parse_file(self, file_path: str) -> Disturbance:
         self.dists = []
@@ -96,4 +92,15 @@ class FileParser:
                     raise Exception("Need to initialize with name before putting attributes")
                 func(line)
         
+                func = switchers[line[0]]
+                if self.in_range and func != self.recomendation:
+                    self.recomend.append(self.rec_lines.strip())
+                    self.rec_lines = ''
+                    self.in_range = False
+                
+                func(line)
+
+                if not self.in_range and func != self.recomendation:
+                    self.in_range = False
+            
         return self.dists
