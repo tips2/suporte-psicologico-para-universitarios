@@ -13,13 +13,9 @@ if __name__ == '__main__':
 
     for attr in folder:
         attr.routine()
-    
-    print('O diagnóstico é:')
-    
+        
     for attr in folder:
         attr.print_status()
     
-    print('Recomenda-se que:')
-
     for attr in folder:
         attr.print_recomendation()
