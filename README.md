@@ -1,4 +1,4 @@
-﻿Serviço de sistema especialista para diagnóstico de ansiedade e depressão
+# Serviço de sistema especialista para diagnóstico de ansiedade e depressão
  
 Alunos participantes do projeto: Eduardo Brasil Araujo e Rayssa M. Roseno.
 
