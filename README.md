@@ -29,7 +29,7 @@ Escolhemos a linguagem de programação python por acreditarmos ser uma linguage
  
 Para facilitar o processo de implementação, decidimos por criar um novo formato de arquivo em que se possa adicionar mais valores para certos transtornos que queiramos.
  
-O formato de arquivo é um formato de texto simples (ascii), para que possa ser mais facilmente modificado no decorrer do desenvolvimento, e tem como propósito a modularidade da implementação e de, possivelmente, adicionar novos transtornos de uma maneira mais facilitada.
+O formato de arquivo é um formato de texto simples (ASCII), para que possa ser mais facilmente modificado no decorrer do desenvolvimento, e tem como propósito a modularidade da implementação e de, possivelmente, adicionar novos transtornos de uma maneira mais facilitada.
  
 ## Novo formato de arquivo
  
