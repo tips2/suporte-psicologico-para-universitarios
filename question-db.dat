@@ -24,6 +24,7 @@
 ? Estou o tempo todo preocupado (a)
 < Não(0), Talvez(1), Sim(2) >
 [0, 1] Não contém ansiedade
+! Qualquer recomendação
 [1, 6] Moderado
 [7, 12] Transtorno de Ansiedade Generalizada
 *
