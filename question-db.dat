@@ -7,13 +7,11 @@
 ? Sinto prazer quando assisto um programa na televisão ou leio um livro
 < Não(2), Talvez(1), Sim(0) >
 [0, 1] Não contém depressão
-!
 [1, 4] Fraco
 ! Uma recomendação padrão
 [5, 8] Moderado
 ! As recomendações são aplicadas para todas as coisas que forem abaixo da adquirida
 [9, 12] Forte
-!
 *
 # Transtorno Ansioso
 ? Minhas preocupações me oprimem.
@@ -24,9 +22,6 @@
 ? Estou o tempo todo preocupado (a)
 < Não(0), Talvez(1), Sim(2) >
 [0, 1] Não contém ansiedade
-!
 [1, 6] Moderado
-!
 [7, 12] Transtorno de Ansiedade Generalizada
-!
 *
