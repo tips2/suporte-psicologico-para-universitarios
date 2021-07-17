@@ -58,9 +58,14 @@ O programa em si não é um leitor deste formato específico, ou framework, por 
 Ao executar o programa, nos deparamos com a mensagem de boas vindas:
  
 ```
-O sistema especialista realiza o diagnóstico do Transtorno de Ansiedade e Transtorno Depressivo. O intuito é dar recomendações básicas acerca dos diagnósticos obtidos para que o usuário possa realizar as primeiras providências para sanar os problemas.
+O sistema especialista realiza o diagnóstico do Transtorno de Ansiedade e Transtorno Depressivo.
+O intuito é dar recomendações básicas acerca dos diagnósticos obtidos para que o usuário possa
+realizar as primeiras providências para sanar os problemas.
  
-O usuário deverá responder as perguntas com os valores que estão entre parênteses, sendo eles em texto natural, como "sim" ou "Não", como também no valor da posição da resposta, como no caso do "não", que está na posição 0, logo, quando o usuário digitar 0 como resposta estará respondendo também com o valor "Não".
+O usuário deverá responder as perguntas com os valores que estão entre parênteses, sendo eles em
+texto natural, como "sim" ou "Não", como também no valor da posição da resposta, como no caso do
+"não", que está na posição 0, logo, quando o usuário digitar 0 como resposta estará respondendo
+também com o valor "Não".
 *Note que o programa não sabe diferenciar entre minúsculas, maiúsculas e letras com acentos*
  
  
@@ -72,18 +77,24 @@ Sinto que gosto de fazer as mesmas coisas de antes
 E, com a entrada de usuário todas com o valor 1 (que se traduz no valor 'Talvez'), temos a saída:
  
 ```
-Ficamos muito felizes por você se encontrar com a saúde mental em dia, mas não deixe de sempre exercer em mantê-la, principalmente nos últimos tempos de pandemia.
+Ficamos muito felizes por você se encontrar com a saúde mental em dia, mas não deixe de sempre
+exercer em mantê-la, principalmente nos últimos tempos de pandemia.
  
 Para depressão:
-O CVV – Centro de Valorização da Vida tem como objetivo realizar apoio emocional e prevenção do suicídio, atendendo voluntária e gratuitamente todas as pessoas que querem e precisam conversar, sob total sigilo por telefone, email e chat 24 horas todos os dias.
+O CVV – Centro de Valorização da Vida tem como objetivo realizar apoio emocional e prevenção do
+suicídio, atendendo voluntária e gratuitamente todas as pessoas que querem e precisam conversar,
+sob total sigilo por telefone, email e chat 24 horas todos os dias.
 acesse: https://www.cvv.org.br/
-App Lojong: o App tem o objetivo exercícios para ajudar a controlar a ansiedade, aliviar o estresse, melhorar o foco, o sono e viver com mais felicidade.
+App Lojong: o App tem o objetivo exercícios para ajudar a controlar a ansiedade, aliviar o
+estresse, melhorar o foco, o sono e viver com mais felicidade.
 acesse: https://play.google.com/store/apps/details?id=br.com.lojong&hl=pt_BR&gl=US
  
 Para ansiedade e Depressão:
 Serviço de Acolhimento Psicológico, Proest:
-Consiste no acolhimento de estudantes por psicólogos da Pró-reitoria Estudantil Serviço de Acolhimento Psicológico
-Acolhimento de estudantes por psicólogos da Pró-reitoria Estudantil (Proest) para orientação ou possível encaminhamento para rede SUS
+Consiste no acolhimento de estudantes por psicólogos da Pró-reitoria Estudantil Serviço de
+Acolhimento Psicológico
+Acolhimento de estudantes por psicólogos da Pró-reitoria Estudantil (Proest) para orientação
+ou possível encaminhamento para rede SUS
 acesse: https://servicos.ufal.br/orgaos/pro-reitoria-estudantil-proest/servico-de-acolhimento-psicologico
  
  
