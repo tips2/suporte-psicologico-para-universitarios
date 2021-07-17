@@ -95,7 +95,8 @@ Consiste no acolhimento de estudantes por psicólogos da Pró-reitoria Estudanti
 Acolhimento Psicológico
 Acolhimento de estudantes por psicólogos da Pró-reitoria Estudantil (Proest) para orientação
 ou possível encaminhamento para rede SUS
-acesse: https://servicos.ufal.br/orgaos/pro-reitoria-estudantil-proest/servico-de-acolhimento-psicologico
+acesse:
+https://servicos.ufal.br/orgaos/pro-reitoria-estudantil-proest/servico-de-acolhimento-psicologico
  
  
 Lembre-se que essas soluções não substituem o tratamento real, procure sempre ajuda!
